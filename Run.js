@@ -75,6 +75,7 @@ function WriteIntoFolder(Circuit, Folder){
 
 if(runExamples){
  //To make a new circuit:
+ var id = 3;
  var exampleCircuit = [[/*[Target ID, ID in circuit]*/ [1,0], /*Input IDs*/[0], /*Output IDs*/[2]], [[1,1], [1], [3]], [[0,2], [2,3], [4]], [[1,3], [4], [5]]];
  var exampleNor = new Node(/*input IDs*/[0, 1], /*output IDs*/[5], exampleCircuit, /*Name*/"Nor", id /*(optional)*/);
 
