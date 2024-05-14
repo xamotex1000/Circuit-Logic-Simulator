@@ -96,4 +96,8 @@ if(runExamples){
  }
 
  console.log(o)
+ if(false){
+  //To save a circuit
+  save(exampleNor);
+ }
 }
