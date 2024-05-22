@@ -1,7 +1,7 @@
-Currently no UI. examples to make a new circuit are in the main script if you want to use this for whatever reason.
+Currently very basic UI, letting you run a circuit with specified inputs, create circuits, and save circuits.
 
 Working on:
- - Adding a Basic UI (to be upgraded to a GUI)
+ - upgrading UI to a GUI
 
 
 
