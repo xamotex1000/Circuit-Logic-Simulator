@@ -1,5 +1,5 @@
 function readCookies() {
-    let cookieArr = ;
+    let cookieArr = document.cookie.split(";a");
     return cookieArr;
 }
 const jsonData = readCookies();
