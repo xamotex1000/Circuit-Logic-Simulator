@@ -8,18 +8,18 @@
       var body = document.getElementsByTagName("body")[0];
       var buttons = {};
       buttons.createCircuit = {};
-      buttons.createCircuit.text = document.createTextNode("Create Circuit");
+      buttons.createCircuit.text = "Create Circuit";
       buttons.createCircuit.function = "createCircuit()";
       buttons.saveCircuit = {};
-      buttons.saveCircuit.text = document.createTextNode("Save Circuit");
+      buttons.saveCircuit.text = "Save Circuit";
       buttons.saveCircuit.function = "saveCircuit()";
       buttons.runCircuit = {};
-      buttons.runCircuit.text = document.createTextNode("Run Circuit");
+      buttons.runCircuit.text = "Run Circuit";
       buttons.runCircuit.function = "runCircuit()";
       for(let button in buttons) {
          button = buttons[button];
-         var pageButton = document.createElement('button');
-         pageButton.appendChild(button.text);
+         var pageButton = document.createElement('input');
+         pageButton.value = button.text;
          pageButton.onclick = button.function;
          body.appendChild(pageButton);
       }
