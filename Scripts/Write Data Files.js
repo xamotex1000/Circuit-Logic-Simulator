@@ -1,15 +1,5 @@
-const fs = import('fs');
-
 function writeFile(Data){
-    const jsonData = JSON.stringify(Data, null, 2);
-
-    fs.writeFile("./Data/"+Data.name+".json", jsonData, (err) => {
-        if (err) {
-            console.error('Error writing JSON file:', err);
-        } else {
-            console.log('JSON file created successfully!');
-        }
-    });
+    console.log(Data);
 }
 
 function writeCombinedFiles(DataArray){
