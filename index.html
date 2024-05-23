@@ -8,14 +8,15 @@
       var body = document.getElementsByTagName("body")[0];
       var buttons = {};
       buttons.createCircuit = {};
-      buttons.createCircuit.element = document.createElement("button");
-      buttons.createCircuit.name = document.createTextNode("Create Circuit");
+      buttons.createCircuit.text = document.createTextNode("Create Circuit");
       buttons.saveCircuit = {};
-      buttons.saveCircuit.element = document.createElement("button");
-      buttons.saveCircuit.name = document.createTextNode("Save Circuit");
+      buttons.saveCircuit.text = document.createTextNode("Save Circuit");
       buttons.runCircuit = {};
-      buttons.runCircuit.element = document.createElement("button");
-      buttons.runCircuit.name = document.createTextNode("Run Circuit");
+      buttons.runCircuit.text = document.createTextNode("Run Circuit");
+      for(let button in buttons) {
+         var pageButton = document.createElement('button');
+         pageButton.appendChild(button.text);
+      }
    </script>
 </body>
 </html>
