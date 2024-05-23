@@ -4,6 +4,6 @@ function readCookies() {
 }
 const jsonData = readCookies();
 var string = document.createElement('h1');
-string.appendChild(jsonData)
+string.appendChild("Works atleast", jsonData)
 document.getElementsByTagName('body')[0].appendChild(string);
 module.exports = jsonData;
