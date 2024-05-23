@@ -1,7 +1,6 @@
 const SaveData = import('./Get Data Files.js')
-const { writeFile, writeCombinedFiles } = import('./Write Data Files.js')
+const { writeFile } = import('./Write Data Files.js')
 const save = writeFile;
-const saveMultiple = writeCombinedFiles;
 var circuits = [{Name: "And", ID: 0, Data: "Reserved"}, {Name: "Not", ID: 1, Data: "Reserved"}];
 const GetCircuitById = (id) => circuits.find(item => item.ID === id);
 const GetCircuitByName = (name) => circuits.find(item => item.Name === name);
@@ -9,9 +8,8 @@ const GetCircuitByName = (name) => circuits.find(item => item.Name === name);
 const CheckBit = (Arry1, Arry2, x, y) => (Arry2[Arry1[x][1][y]] == 1 || Arry2[Arry1[x][1][y]] == true);
 
 for(var Data of SaveData){
-	global[Data.name] = new Node(Data.Inputs, Data.Outputs, Data.Data, Data.name, Data.id);
+	global[Data.name] = new Node(Data.Inputs, Data.Outputs, Data.Data, Data.name, Data.id)
 }
-var IDChart = []
 
 function Node(inputs, outputs, circuit, name, id, ORData){
 	this.name=name;
@@ -71,10 +69,6 @@ function RunCircuit(BlueprintArray, inputMap, Outputs, OvrKey){
 		info.push(DataArray[Outputs[i]]);
 	}
 	return(info);
-}
-
-function writeToFolder(Circuit, Folder){
-	saveMultiple([Folder, Circuit]);
 }
 
 
