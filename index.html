@@ -19,6 +19,7 @@
       for(let button in buttons) {
          button = buttons[button];
          var pageButton = document.createElement('input');
+         pageButton.type = "button";
          pageButton.value = button.text;
          pageButton.onclick = button.function;
          body.appendChild(pageButton);
