@@ -9,15 +9,28 @@
       var buttons = {};
       buttons.createCircuit = {};
       buttons.createCircuit.text = document.createTextNode("Create Circuit");
+      buttons.createCircuit.function = "createCircuit()";
       buttons.saveCircuit = {};
       buttons.saveCircuit.text = document.createTextNode("Save Circuit");
+      buttons.saveCircuit.function = "saveCircuit()";
       buttons.runCircuit = {};
       buttons.runCircuit.text = document.createTextNode("Run Circuit");
+      buttons.runCircuit.function = "runCircuit()";
       for(let button in buttons) {
          button = buttons[button];
          var pageButton = document.createElement('button');
          pageButton.appendChild(button.text);
+         pageButton.onclick = button.function;
          body.appendChild(pageButton);
+      }
+      function createCircuit(){
+         console.log("Create");
+      }
+      function saveCircuit(){
+         console.log("Save");
+      }
+      function runCircuit(){
+         console.log("Run");
       }
    </script>
 </body>
