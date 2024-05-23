@@ -5,6 +5,7 @@ function readCookies() {
 const jsonData = decodeURIComponent(readCookies()).split(';')
 console.log(jsonData)
 for(var i = 0; i < jsonData.length; i++){
+    console.log(i)
     jsonData[i] = jsonData[i].split('=')[1].trim();
 }
 jsonData[0] = JSON.parse(jsonData[0])
