@@ -5,7 +5,6 @@ const saveMultiple = writeCombinedFiles;
 var circuits = [{Name: "And", ID: 0, Data: "Reserved"}, {Name: "Not", ID: 1, Data: "Reserved"}];
 const GetCircuitById = (id) => circuits.find(item => item.ID === id);
 const GetCircuitByName = (name) => circuits.find(item => item.Name === name);
-const { app, BrowserWindow } = require('electron');
 
 const CheckBit = (Arry1, Arry2, x, y) => (Arry2[Arry1[x][1][y]] == 1 || Arry2[Arry1[x][1][y]] == true);
 
