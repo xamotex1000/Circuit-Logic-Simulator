@@ -1,5 +1,5 @@
-const SaveData = import('./Get Data Files')
-const { writeFile, writeCombinedFiles } = import('./Write Data Files')
+const SaveData = import('./Get Data Files.js')
+const { writeFile, writeCombinedFiles } = import('./Write Data Files.js')
 const save = writeFile;
 const saveMultiple = writeCombinedFiles;
 var circuits = [{Name: "And", ID: 0, Data: "Reserved"}, {Name: "Not", ID: 1, Data: "Reserved"}];

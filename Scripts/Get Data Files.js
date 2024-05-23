@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = import('fs');
+const path = import('path');
 
 // Function to read all JSON files in a folder
 function readJSONFilesInFolder(folderPath) {

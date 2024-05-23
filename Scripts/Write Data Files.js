@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = import('fs');
 
 function writeFile(Data){
     const jsonData = JSON.stringify(Data, null, 2);
