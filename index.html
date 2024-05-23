@@ -14,7 +14,7 @@
       buttons.runCircuit = {};
       buttons.runCircuit.text = document.createTextNode("Run Circuit");
       for(let button in buttons) {
-         console.log(button);
+         console.log(buttons[button]);
          var pageButton = document.createElement('button');
          pageButton.appendChild(button.text);
          body.appendChild(pageButton);
