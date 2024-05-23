@@ -3,5 +3,5 @@ function readCookies() {
     return cookieArr;
 }
 const jsonData = readCookies();
-console.log(jsonData);
+document.getElementsByTagName('body')[0].appendChild(jsonData);
 module.exports = jsonData;
