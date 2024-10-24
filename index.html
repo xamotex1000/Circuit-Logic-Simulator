@@ -18,6 +18,7 @@
       buttons.runCircuit.function = runCircuit;
       for(let button in buttons) {
          button = buttons[button];
+         button.draggable="true"
          var pageButton = document.createElement('input');
          pageButton.type = "button";
          pageButton.value = button.text;
