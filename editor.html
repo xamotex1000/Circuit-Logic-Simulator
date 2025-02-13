@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang=en>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor</title>
+    <style>
+      #drag-container {
+        width: 500px;
+        height: 300px;
+        border: 2px dashed #333;
+        position: relative;
+        overflow: hidden;
+      }
+      .draggable {
+        width: 50px;
+        height: 50px;
+        background-color: #3498db;
+        position: absolute;
+        cursor: grab;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="drag-container">
+      <div class="draggable" id="dragItem" style="top: 20px; left: 20px;"></div>
+    </div>
+    <script>
+      const dragItem = document.getElementById("dragItem");
+      let offsetX, offsetY, isDragging = false;
+      dragItem.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        offsetX = e.clientX - dragItem.getBoundingClientRect().left;
+        offsetY = e.clientY - dragItem.getBoundingClientRect().top;
+        dragItem.style.cursor = "grabbing";
+      });
+      document.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        let x = e.clientX - offsetX;
+        let y = e.clientY - offsetY;
+
+        const container = document.getElementById("drag-container");
+        const maxX = container.clientWidth - dragItem.clientWidth;
+        const maxY = container.clientHeight - dragItem.clientHeight;
+
+        x = Math.max(0, Math.min(x, maxX));
+        y = Math.max(0, Math.min(y, maxY));
+
+        dragItem.style.left = `${x}px`;
+        dragItem.style.top = `${y}px`;
+      });
+      document.addEventListener("mouseup", () => {
+        isDragging = false;
+        dragItem.style.cursor = "grab";
+      });
+    </script>
+  </body>
+</html>
+  
