@@ -46,8 +46,8 @@
         if (!isDragging) return;
         
         const container = document.getElementById("drag-container");
-        let x = e.clientX - container.left - offsetX;
-        let y = e.clientY - container.top - offsetY;
+        let x = e.clientX - offsetX;
+        let y = e.clientY - offsetY;
 
         const maxX = container.clientWidth - dragItem.clientWidth;
         const maxY = container.clientHeight - dragItem.clientHeight;
