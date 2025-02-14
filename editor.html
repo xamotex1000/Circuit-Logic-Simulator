@@ -51,8 +51,9 @@
         dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
       }
       function selectItem() {
+        var dropdown = document.getElementById("dropdown-container");
         var selected = document.getElementById("item-list").value;
-        
+        dropdown.style.display = "none";
       }
     </script>
     <script>
