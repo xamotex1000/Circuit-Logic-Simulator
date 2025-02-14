@@ -29,6 +29,7 @@
     </style>
   </head>
   <body>
+    <h1 id="pseudo-log">{     }</h1>
     <div id="add-ic-button">ADD CIRCUIT</div>
     <div id="drag-container">
       <div class="draggable" id="dragItem" style="top: 10; left: 10;"></div>
@@ -36,11 +37,12 @@
     <script>
       const dragItem = document.getElementById("dragItem");
       const container = document.getElementById("drag-container");
+      const pseudoLog = document.getElementById("pseudo-log");
       let offsetX, offsetY, isDragging = false;
       dragItem.addEventListener("mousedown", (e) => {
         isDragging = true;
-        offsetX = e.clientX - dragItem.getBoundingClientRect().left + container.left;
-        offsetY = e.clientY - dragItem.getBoundingClientRect().top + container.top;
+        offsetX = e.clientX - dragItem.getBoundingClientRect().left + container.getBoundingClientRect().left;
+        offsetY = e.clientY - dragItem.getBoundingClientRect().top + container.getBoundingClientRect().top;
         dragItem.style.cursor = "grabbing";
       });
       document.addEventListener("mousemove", (e) => {
@@ -48,6 +50,8 @@
         
         let x = e.clientX - offsetX;
         let y = e.clientY - offsetY;
+
+        pseudoLog.innerText = "${x}, ${y}";
 
         const maxX = container.clientWidth - dragItem.clientWidth;
         const maxY = container.clientHeight - dragItem.clientHeight;
