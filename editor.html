@@ -19,6 +19,10 @@
         position: relative;
         overflow: hidden;
       }
+      #dropdown-container {
+        display: none;
+        margin-top: 10px;
+      }
       .draggable {
         width: 50px;
         height: 50px;
@@ -30,15 +34,34 @@
   </head>
   <body>
     <h1 id="pseudo-log">{     }</h1>
-    <div id="add-ic-button">ADD CIRCUIT</div>
+    <button id="add-ic-button" onclick="circuitDropdown()">ADD CIRCUIT</button>
+    <div id="dropdown-container">
+      <select id="item-list" onchange="selectCircuit()">
+        <option value="" disabled selected>Select an option</option>
+        <option value="and">AND</option>
+        <option value="not">NOT</option>
+      </select>
+    </div>
     <div id="drag-container">
       <div class="draggable" id="dragItem" style="top: 10; left: 10;"></div>
     </div>
     <script>
+      function circuitDropdown() {
+        var dropdown = document.getElementById("dropdown-container");
+        dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
+      }
+      function selectItem() {
+        var selected = document.getElementById("item-list").value;
+        
+      }
+    </script>
+    <script>
       const dragItem = document.getElementById("dragItem");
       const container = document.getElementById("drag-container");
       const pseudoLog = document.getElementById("pseudo-log");
+      const icButton = document.getElementById("add-ic-button");
       let offsetX, offsetY, isDragging = false;
+      icButton.addEventListener("click")
       dragItem.addEventListener("mousedown", (e) => {
         isDragging = true;
         offsetX = e.clientX - dragItem.getBoundingClientRect().left + container.getBoundingClientRect().left;
