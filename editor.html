@@ -22,8 +22,6 @@
       .draggable {
         width: 50px;
         height: 50px;
-        top: 10px;
-        left: 10px;
         background-color: #3498db;
         position: relative;
         cursor: grab;
@@ -33,7 +31,7 @@
   <body>
     <div id="add-ic-button">ADD CIRCUIT</div>
     <div id="drag-container">
-      <div class="draggable" id="dragItem""></div>
+      <div class="draggable" id="dragItem" style="top: 10; left: 10;"></div>
     </div>
     <script>
       const dragItem = document.getElementById("dragItem");
