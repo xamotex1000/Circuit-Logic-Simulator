@@ -35,17 +35,17 @@
     </div>
     <script>
       const dragItem = document.getElementById("dragItem");
+      const container = document.getElementById("drag-container");
       let offsetX, offsetY, isDragging = false;
       dragItem.addEventListener("mousedown", (e) => {
         isDragging = true;
-        offsetX = e.clientX - dragItem.getBoundingClientRect().left;
-        offsetY = e.clientY - dragItem.getBoundingClientRect().top;
+        offsetX = e.clientX - dragItem.getBoundingClientRect().left + container.left;
+        offsetY = e.clientY - dragItem.getBoundingClientRect().top + container.top;
         dragItem.style.cursor = "grabbing";
       });
       document.addEventListener("mousemove", (e) => {
         if (!isDragging) return;
         
-        const container = document.getElementById("drag-container");
         let x = e.clientX - offsetX;
         let y = e.clientY - offsetY;
 
