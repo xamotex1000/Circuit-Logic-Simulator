@@ -41,8 +41,8 @@
       let offsetX, offsetY, isDragging = false;
       dragItem.addEventListener("mousedown", (e) => {
         isDragging = true;
-        offsetX = e.clientX - dragItem.getBoundingClientRect().left - container.left;
-        offsetY = e.clientY - dragItem.getBoundingClientRect().top - container.top;
+        offsetX = e.clientX - dragItem.left - container.left;
+        offsetY = e.clientY - dragItem.top - container.top;
         dragItem.style.cursor = "grabbing";
       });
       document.addEventListener("mousemove", (e) => {
